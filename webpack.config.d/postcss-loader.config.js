@@ -10,7 +10,6 @@
                 plugins: [
                     require("tailwindcss")({config: "../../../../tailwind.config.js"}),
                     require("autoprefixer")
-                    // or using transitive dep: require("../../node_modules/.bin/autoprefixer")
                 ]
             }
         }

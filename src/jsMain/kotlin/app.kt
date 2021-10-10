@@ -1,18 +1,16 @@
 import dev.fritz2.binding.storeOf
-import dev.fritz2.dom.html.render
+import dev.fritz2.tailwind.renderTailwind
+import dev.fritz2.tailwind.require
 import dev.fritz2.tailwind.ui.alert
 import dev.fritz2.tailwind.ui.card
 import dev.fritz2.tailwind.ui.icons.Solid
 import model.Framework
 
-external fun require(module: String): dynamic
-
 fun main() {
     require("./styles.css")
-
     val frameworkStore = storeOf(Framework("fritz2"))
 
-    render {
+    renderTailwind {
         card("w-60 mb-8") {
             header("Header")
             content("Lorem ipsum, dolor sit amet...")
