@@ -1,15 +1,8 @@
-import dev.fritz2.binding.storeOf
-import dev.fritz2.dom.html.render
-import kotlinx.coroutines.flow.map
-import model.Framework
+import dev.fritz2.tailwind.renderTailwind
 
 fun main() {
-    val frameworkStore = storeOf(Framework("fritz2"))
+    renderTailwind {
 
-    render {
-        p {
-            +"This site uses: "
-            b { frameworkStore.data.map { it.name }.asText() }
-        }
+
     }
 }

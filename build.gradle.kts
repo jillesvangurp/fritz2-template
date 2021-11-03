@@ -3,6 +3,7 @@ plugins {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -16,6 +17,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("dev.fritz2:core:0.13")
+                implementation("dev.fritz2:tailwind-core:0.14-SNAPSHOT")
                 // see https://components.fritz2.dev/
                 // implementation("dev.fritz2:components:0.13")
             }
