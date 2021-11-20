@@ -1,4 +1,6 @@
 import dev.fritz2.binding.storeOf
+import dev.fritz2.dom.afterMount
+import dev.fritz2.dom.beforeUnmount
 import dev.fritz2.dom.html.render
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
@@ -52,10 +54,20 @@ fun main() {
         ul {
             s.data.renderEach(into = this) { num ->
                 li {
+                    afterMount { _, _ ->
+                        val x = getRandomString(1024)
+                        null
+                    }
                     +num.toString()
                     +" value = "
-                    b.asText()
-                    //b.render(into = this) { span { +it } }
+//                    b.asText()
+                    b.render(into = this) {
+                        beforeUnmount { _, _ ->
+                            val x = it.length
+                            null
+                        }
+                        span { +it }
+                    }
                 }
             }
         }
